@@ -1,0 +1,156 @@
+0 	1	2	dois
+1	2	0	mil
+
+2	3	0	e
+
+3	4	1	um
+3	4	2	dois
+3	4	3	tres
+3	4	4	quatro
+3	4	5	cinco
+3	4	6	seis
+3	4	7	sete
+3	4	8	oito
+3	4	9	nove
+
+2	5	1	e
+
+5	4	0	dez
+5	4	1	onze
+5	4	2	doze
+5	4	3	treze
+5	4	4	catorze
+5	4	5	quinze
+5	4	6	dezasseis
+5	4	7	dezassete
+5	4	8	dezoito
+5	4	9	dezanove
+
+
+2	7	2	e
+
+7	4	0	vinte
+7	9	1	vinte
+7	10	2	vinte
+7	11	3	vinte
+7	12	4	vinte
+7	13	5	vinte
+7	14	6	vinte
+7	15	7	vinte
+7	16	8	vinte
+7	17	9	vinte
+
+9	18	eps	e
+18	4	eps	um
+
+10	20	eps	e
+20	4	eps	dois
+
+11	22	eps	e
+22	4	eps	tres
+
+12	24	eps	e
+24	4	eps	quatro
+
+13	26	eps	e
+26	4	eps cinco
+
+14	28	eps	e
+28	4	eps	seis
+
+15	30	eps	e
+30	4	eps sete
+
+16	32	eps	e
+32	4	eps	oito
+
+17	34	eps	e
+34	4	eps nove
+
+2	36	3	e
+2	38	4	e
+2	39	5	e
+2	40	6	e
+2	41	7	e
+2	42	8	e
+2	43	9	e	
+
+36	4	0	trinta
+36	9	1	trinta
+36	10	2	trinta
+36	11	3	trinta
+36	12	4	trinta
+36	13	5	trinta
+36	14	6	trinta
+36	15	7	trinta
+36	16	8	trinta
+36	17	9	trinta
+
+38	4	0	quarenta
+38	9	1	quarenta
+38	10	2	quarenta
+38	11	3	quarenta
+38	12	4	quarenta
+38	13	5	quarenta
+38	14	6	quarenta
+38	15	7	quarenta
+38	16	8	quarenta
+38	17	9	quarenta
+
+39	4	0	cinquenta
+39	9	1	cinquenta
+39	10	2	cinquenta
+39	11	3	cinquenta
+39	12	4	cinquenta
+39	13	5	cinquenta
+39	14	6	cinquenta
+39	15	7	cinquenta
+39	16	8	cinquenta
+39	17	9	cinquenta
+
+40	4	0	sessenta
+40	9	1	sessenta
+40	10	2	sessenta
+40	11	3	sessenta
+40	12	4	sessenta
+40	13	5	sessenta
+40	14	6	sessenta
+40	15	7	sessenta
+40	16	8	sessenta
+40	17	9	sessenta
+
+
+41	4	0	setenta
+41	9	1	setenta
+41	10	2	setenta
+41	11	3	setenta
+41	12	4	setenta
+41	13	5	setenta
+41	14	6	setenta
+41	15	7	setenta
+41	16	8	setenta
+41	17	9	setenta
+
+42	4	0	oitenta
+42	9	1	oitenta
+42	10	2	oitenta
+42	11	3	oitenta
+42	12	4	oitenta
+42	13	5	oitenta
+42	14	6	oitenta
+42	15	7	oitenta
+42	16	8	oitenta
+42	17	9	oitenta
+
+43	4	0	noventa
+43	9	1	noventa
+43	10	2	noventa
+43	11	3	noventa
+43	12	4	noventa
+43	13	5	noventa
+43	14	6	noventa
+43	15	7	noventa
+43	16	8	noventa
+43	17	9	noventa
+
+4

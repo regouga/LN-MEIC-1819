@@ -1,0 +1,243 @@
+0	1	0	eps
+0	2	1	eps
+0	3	2	vinte
+0	17	3	trinta
+
+1	4	1	um
+1	4	2	dois
+1	4	3	tres
+1	4	4	quatro
+1	4	5	cinco
+1	4	6	seis
+1	4	7	sete
+1	4	8	oito
+1	4	9	nove
+
+2	4	0	dez
+2	4	1	onze
+2	4	2	doze
+2	4	3	treze
+2	4	4	catorze
+2	4	5	quinze
+2	4	6	dezasseis
+2	4	7	dezassete
+2	4	8	dezoito
+2	4	9	dezanove
+
+3	4	0	eps
+3	7	1	e
+3	8	2	e
+3	9	3	e
+3	10	4	e
+3	11	5	e
+3	12	6	e
+3	13	7	e
+3	14	8	e
+3	15	9	e
+
+7	4	eps	um
+8	4	eps	dois
+9	4	eps tres
+10	4	eps	quatro
+11	4	eps	cinco
+12	4	eps	seis
+13	4	eps	sete
+14	4	eps	oito
+15	4	eps	nove
+
+17	4	0	eps
+17	19	1	e
+19	4	eps	um
+
+4	21	/	de
+
+
+
+
+
+21	22	0	eps
+
+22	24	1	janeiro
+22	24	2	fevereiro
+22	24	3	marco
+22	24	4	abril
+22	24	5	maio
+22	24	6	junho
+22	24	7	julho
+22	24	8	agosto
+22	24	9	setembro
+
+21	23	1	eps
+23	24	eps	janeiro
+23	24	0	outubro
+23	24	1	novembro
+23	24	2	dezembro
+
+21	24	2	fevereiro
+21	24	3	marco
+21	24	4	abril
+21	24	5	maio
+21	24	6	junho
+21	24	7	julho
+21	24	8	agosto
+21	24	9	setembro
+
+24	25	/	de
+
+
+25 	26	2	dois
+26	27	0	mil
+
+27	28	0	e
+
+28	29	1	um
+28	29	2	dois
+28	29	3	tres
+28	29	4	quatro
+28	29	5	cinco
+28	29	6	seis
+28	29	7	sete
+28	29	8	oito
+28	29	9	nove
+
+27	30	1	e
+
+30	29	0	dez
+30	29	1	onze
+30	29	2	doze
+30	29	3	treze
+30	29	4	catorze
+30	29	5	quinze
+30	29	6	dezasseis
+30	29	7	dezassete
+30	29	8	dezoito
+30	29	9	dezanove
+
+
+27	31	2	e
+
+31	29	0	vinte
+31	32	1	vinte
+31	33	2	vinte
+31	34	3	vinte
+31	35	4	vinte
+31	36	5	vinte
+31	37	6	vinte
+31	38	7	vinte
+31	39	8	vinte
+31	40	9	vinte
+
+32	18	eps	e
+18	29	eps	um
+
+33	20	eps	e
+20	29	eps	dois
+
+34	22	eps	e
+22	29	eps	tres
+
+35	24	eps	e
+24	29	eps	quatro
+
+36	26	eps	e
+26	29	eps cinco
+
+37	28	eps	e
+28	29	eps	seis
+
+38	30	eps	e
+30	29	eps sete
+
+39	32	eps	e
+32	29	eps	oito
+
+40	34	eps	e
+34	29	eps nove
+
+27	66	3	e
+27	68	4	e
+27	69	5	e
+27	70	6	e
+27	71	7	e
+27	72	8	e
+27	73	9	e	
+
+66	29	0	trinta
+66	32	1	trinta
+66	33	2	trinta
+66	34	3	trinta
+66	35	4	trinta
+66	36	5	trinta
+66	37	6	trinta
+66	38	7	trinta
+66	39	8	trinta
+66	40	9	trinta
+
+68	29	0	quarenta
+68	32	1	quarenta
+68	33	2	quarenta
+68	34	3	quarenta
+68	35	4	quarenta
+68	36	5	quarenta
+68	37	6	quarenta
+68	38	7	quarenta
+68	39	8	quarenta
+68	40	9	quarenta
+
+69	29	0	cinquenta
+69	32	1	cinquenta
+69	33	2	cinquenta
+69	34	3	cinquenta
+69	35	4	cinquenta
+69	36	5	cinquenta
+69	37	6	cinquenta
+69	38	7	cinquenta
+69	39	8	cinquenta
+69	40	9	cinquenta
+
+70	29	0	sessenta
+70	32	1	sessenta
+70	33	2	sessenta
+70	34	3	sessenta
+70	35	4	sessenta
+70	36	5	sessenta
+70	37	6	sessenta
+70	38	7	sessenta
+70	39	8	sessenta
+70	40	9	sessenta
+
+
+71	29	0	setenta
+71	32	1	setenta
+71	33	2	setenta
+71	34	3	setenta
+71	35	4	setenta
+71	36	5	setenta
+71	37	6	setenta
+71	38	7	setenta
+71	39	8	setenta
+71	40	9	setenta
+
+72	29	0	oitenta
+72	32	1	oitenta
+72	33	2	oitenta
+72	34	3	oitenta
+72	35	4	oitenta
+72	36	5	oitenta
+72	37	6	oitenta
+72	38	7	oitenta
+72	39	8	oitenta
+72	40	9	oitenta
+
+73	29	0	noventa
+73	32	1	noventa
+73	33	2	noventa
+73	34	3	noventa
+73	35	4	noventa
+73	36	5	noventa
+73	37	6	noventa
+73	38	7	noventa
+73	39	8	noventa
+73	40	9	noventa
+
+29
