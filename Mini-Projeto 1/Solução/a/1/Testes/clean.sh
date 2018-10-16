@@ -1,0 +1,2 @@
+rm *.fst
+rm *.pdf
