@@ -1,58 +1,58 @@
 cd ./a/1/
-./run.sh
+./clean.sh
 cd ..
 
 cd ./2/
-./run.sh
+./clean.sh
 cd ./Testes/
-./run.sh
+./clean.sh
 cd ..
 cd ..
 cd ..
 
 cd ./b/3/
-./run.sh
+./clean.sh
 cd ..
 
 cd ./4/
-./run.sh
+./clean.sh
 cd ./Testes/
-./run.sh
+./clean.sh
 cd ..
 cd ..
 cd ..
 
 cd ./c/5/
-./run.sh
+./clean.sh
 cd ..
 
 cd ./6/
-./run.sh
+./clean.sh
 cd ..
 
 cd ./7/
-./run.sh
+./clean.sh
 cd ..
 
 cd ./8/
-./run.sh
+./clean.sh
 cd ./Testes/
-./run.sh
+./clean.sh
 cd ..
 cd ..
 cd ..
 
 cd ./d/9/
-./run.sh
+./clean.sh
 cd ./Testes/
-./run.sh
+./clean.sh
 cd ..
 cd ..
 
 cd ./10/
-./run.sh
+./clean.sh
 cd ./Testes/
-./run.sh
+./clean.sh
 cd ..
 cd ..
 cd ..
