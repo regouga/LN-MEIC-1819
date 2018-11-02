@@ -1,17 +1,9 @@
-import os
-import nltk
+import os, nltk, numpy as np, tflearn, tensorflow as tf, random, string, unicodedata, sys
 from nltk.stem.lancaster import LancasterStemmer
-import numpy as np
-import tflearn
-import tensorflow as tf
-import random
-import json
-import string
-import unicodedata
-import sys
-
 from contextlib import contextmanager
 
+
+# Supress Console Logging
 @contextmanager
 def suppress_stdout():
     with open(os.devnull, "w") as devnull:
@@ -21,13 +13,11 @@ def suppress_stdout():
             yield
         finally:
             sys.stdout = old_stdout
-
-
-
-
+            
 
 with suppress_stdout():
     nltk.download('punkt')
+    
 # a table structure to hold the different punctuation used
 tbl = dict.fromkeys(i for i in range(sys.maxunicode)
                     if unicodedata.category(chr(i)).startswith('P'))
@@ -43,7 +33,6 @@ stemmer = LancasterStemmer()
 # variable to hold the Json data read from the file
 data = None
 
-# read the json file and load the training data
 
 data = [i.strip('\n').split('\t') for i in open(sys.argv[1])]
 
@@ -66,7 +55,6 @@ keyword = []
 vote_avg = []
 
 for sentences in data:
-
     category = str(sentences[0])
     
     if (category == 'actor_name '):
@@ -116,13 +104,6 @@ for sentences in data:
         
     if (category == 'vote_avg '):
         vote_avg.append(sentences[1]) 
-        
-        
-alll = [actor_name, character_name, spoken_language, person_name, runtime, overview, budget, original_language, release_date, revenue, original_title, production_country, production_company, genre, keyword, vote_avg]        
-        
-
-
-
 
 # get a list of all categories to train for
 categories = ['actor_name ', 'character_name ', 'spoken_language ', 'person_name ', 'runtime ', 'overview ', 'budget ', 'original_language ', 'release_date ', 'revenue ', 'original_title ', 'production_country ', 'production_company ', 'genre ', 'keyword ', 'vote_avg ']
@@ -364,7 +345,7 @@ net = tflearn.regression(net)
 
 with suppress_stdout():
     # Define model and setup tensorboard
-    model = tflearn.DNN(net, tensorboard_dir='tflearn_logs', tensorboard_verbose=0)
+    model = tflearn.DNN(net)
     # Start training (apply gradient descent algorithm)
     model.fit(train_x, train_y, n_epoch=1000, show_metric=True)
     model.save('model.tflearn')
