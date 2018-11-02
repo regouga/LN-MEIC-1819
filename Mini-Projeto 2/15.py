@@ -9,13 +9,29 @@ import json
 import string
 import unicodedata
 import sys
-tf.logging.set_verbosity(tf.logging.WARN)
-nltk.download('punkt')
+
+from contextlib import contextmanager
+
+@contextmanager
+def suppress_stdout():
+    with open(os.devnull, "w") as devnull:
+        old_stdout = sys.stdout
+        sys.stdout = devnull
+        try:  
+            yield
+        finally:
+            sys.stdout = old_stdout
+
+
+
+
+
+with suppress_stdout():
+    nltk.download('punkt')
 # a table structure to hold the different punctuation used
 tbl = dict.fromkeys(i for i in range(sys.maxunicode)
                     if unicodedata.category(chr(i)).startswith('P'))
 
-import sys
 
 
 # method to remove punctuations from sentences.
@@ -28,8 +44,6 @@ stemmer = LancasterStemmer()
 data = None
 
 # read the json file and load the training data
-
-
 
 data = [i.strip('\n').split('\t') for i in open(sys.argv[1])]
 
@@ -297,116 +311,11 @@ for each_category in categories:
                 words.extend(w)
                 docs.append((w, each_category))    
                 
-                
-               
-'''
-print("1")
-f = open("recursos/list_jobs.txt")
-line = f.readline()
-while line:
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'person_name ')) 
-    line = f.readline()
-f.close()  
-         
-print("2")
-f = open("recursos/list_movies.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'original_title ')) 
-    line = f.readline()
-f.close()                    
-
-
-print("3")
-f = open("recursos/list_characters.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'character_name ')) 
-    line = f.readline()
-f.close()
-
-
-print("4")
-f = open("recursos/list_companies.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-   # words.extend(w)
-    docs.append((w, 'production_company ')) 
-    line = f.readline()
-f.close() 
-
-print("5")
-f = open("recursos/list_genres.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'genre ')) 
-    line = f.readline()
-f.close()              
-
-print("6")
-f = open("recursos/list_jobs.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'genre ')) 
-    line = f.readline()
-f.close()
-
-print("7")
-f = open("recursos/list_keywords.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'genre ')) 
-    line = f.readline()
-f.close()
-
-
-print("8")
-f = open("recursos/list_people.txt")
-line = f.readline()
-while line:
-    line = remove_punctuation(line)
-    # extract words from each sentence and append to the word list
-    w = nltk.word_tokenize(line)
-    #words.extend(w)
-    docs.append((w, 'person_name ')) 
-    line = f.readline()
-f.close()
-
-print("9")
-'''
-
 
 # stem and lower each word and remove duplicates
 words = [stemmer.stem(w.lower()) for w in words]
 words = sorted(list(set(words))) 
 
-print("Words")
 
 # create our training data
 training = []
@@ -434,7 +343,7 @@ for doc in docs:
     # which catefory that bow belongs to.
     training.append([bow, output_row])
 
-print("For")
+
 # shuffle our features and turn into np.array as tensorflow  takes in numpy array
 random.shuffle(training)
 training = np.array(training)
@@ -453,24 +362,12 @@ net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
 net = tflearn.regression(net)
 
 
-
-# Define model and setup tensorboard
-model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
-# Start training (apply gradient descent algorithm)
-model.fit(train_x, train_y, n_epoch=1000, show_metric=True)
-model.save('model.tflearn')
-
-
-# let's test the mdodel for a few sentences:
-# the first two sentences are used for training, and the last two sentences are not present in the training data.
-sent_1 = "What are the most relevant actors in Bad Boys?"
-sent_2 = "The debut of The Matrix occurred in what month?"
-sent_3 = "Who starred in Batman Begins?"
-sent_4 = "Release date of Inside Out?"
-
-
-
-
+with suppress_stdout():
+    # Define model and setup tensorboard
+    model = tflearn.DNN(net, tensorboard_dir='tflearn_logs', tensorboard_verbose=0)
+    # Start training (apply gradient descent algorithm)
+    model.fit(train_x, train_y, n_epoch=1000, show_metric=True)
+    model.save('model.tflearn')
 
 
 # a method that takes in a sentence and list of all words
@@ -499,10 +396,3 @@ while line:
     print(categories[np.argmax(model.predict([get_tf_record(line)]))])
     line = f.readline()
 f.close()    
-
-
-# we can start to predict the results for each of the 4 sentences
-#print(categories[np.argmax(model.predict([get_tf_record(sent_1)]))])
-#print(categories[np.argmax(model.predict([get_tf_record(sent_2)]))])
-#print(categories[np.argmax(model.predict([get_tf_record(sent_3)]))])
-#print(categories[np.argmax(model.predict([get_tf_record(sent_4)]))])
